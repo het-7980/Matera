@@ -1,0 +1,50 @@
+.detail-hero {
+  position: relative;
+  height: 82svh;
+  min-height: 480px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.detail-hero-media {
+  position: absolute;
+  inset: 0;
+}
+
+.detail-hero-media-inner,
+.detail-hero-fill {
+  width: 100%;
+  height: 100%;
+}
+
+.detail-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(20, 18, 15, 0.8) 0%, rgba(20, 18, 15, 0.35) 40%, rgba(20, 18, 15, 0.05) 65%, rgba(20, 18, 15, 0.25) 100%);
+  pointer-events: none;
+}
+
+.detail-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-bottom: clamp(2rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  color: var(--color-ivory);
+}
+
+.detail-hero-content .eyebrow { color: rgba(244, 241, 234, 0.75); }
+
+.detail-hero-title {
+  font-size: clamp(2.6rem, 7vw, 5.5rem);
+  font-weight: 300;
+}
+
+.detail-hero-sub {
+  font-size: 1.1rem;
+  color: rgba(244, 241, 234, 0.85);
+}

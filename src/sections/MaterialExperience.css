@@ -1,0 +1,173 @@
+.material-exp {
+  position: relative;
+  background: var(--color-black);
+}
+
+.material-exp-sticky {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  padding-block: calc(var(--nav-height) + clamp(1rem, 2.5vw, 2rem)) clamp(2rem, 4vw, 3rem);
+  overflow: hidden;
+}
+
+.material-exp-heading,
+.material-exp-footer {
+  width: 100%;
+}
+
+.material-exp-heading {
+  color: var(--color-ivory);
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+.material-exp-heading .section-heading { margin-bottom: 0; }
+.material-exp-heading .eyebrow { color: rgba(244,241,234,0.5); }
+.material-exp-heading h2 { color: var(--color-ivory); }
+
+.material-exp-split {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  min-height: 0;
+}
+
+.material-exp-pane {
+  position: relative;
+  overflow: hidden;
+}
+
+.material-exp-pane .material-exp-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: inset(100% 0% 0% 0%);
+  transition: clip-path 1.25s var(--ease-inout-expo);
+}
+
+.material-exp-pane .material-exp-media.is-shown { clip-path: inset(0% 0% 0% 0%); }
+
+.material-exp-pane + .material-exp-pane .material-exp-media { transition-delay: 0.1s; }
+
+.material-exp-pane .material-exp-media .media-img {
+  transform: scale(1.18);
+  transition: opacity 0.9s var(--ease-premium), transform 1.8s var(--ease-premium);
+}
+
+.material-exp-pane .material-exp-media.is-shown .media-img { transform: scale(1); }
+
+.material-exp-mask {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.1em;
+}
+
+.material-exp-roll { display: inline-block; }
+
+.material-exp-tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-ivory);
+  background: rgba(20, 18, 15, 0.55);
+  backdrop-filter: blur(6px);
+  padding: 6px 10px;
+}
+
+.material-exp-footer {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.2rem, 3vw, 2.5rem);
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+  color: var(--color-ivory);
+}
+
+.material-exp-index {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  display: flex;
+  gap: 0.3rem;
+  color: rgba(244, 241, 234, 0.5);
+}
+
+.material-exp-name {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 300;
+  flex: 1;
+}
+
+.material-exp-progress {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.material-exp-dot {
+  position: relative;
+  width: 32px;
+  height: 2px;
+  background: rgba(244, 241, 234, 0.2);
+  overflow: hidden;
+}
+
+.material-exp-dot-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--color-ivory);
+  transform-origin: left center;
+}
+
+.material-exp-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 44px;
+  padding: 0.7rem 1.1rem;
+  border: 1px solid rgba(244, 241, 234, 0.3);
+  color: var(--color-ivory);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: border-color var(--dur-fast) var(--ease-premium), background var(--dur-fast) var(--ease-premium);
+}
+
+.material-exp-cue:hover {
+  border-color: var(--color-ivory);
+  background: rgba(244, 241, 234, 0.06);
+}
+
+.material-exp-cue:focus-visible { outline-color: var(--color-ivory); }
+
+.material-exp-cue-muted { color: rgba(244, 241, 234, 0.55); }
+
+.material-exp-cue-arrow {
+  animation: material-cue-bob 1.8s ease-in-out infinite;
+}
+
+@keyframes material-cue-bob {
+  0%, 100% { transform: translateY(-2px); opacity: 0.6; }
+  50% { transform: translateY(3px); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .material-exp-cue-arrow { animation: none; }
+}
+
+@media (max-width: 760px) {
+  .material-exp-split { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
+  .material-exp-footer { flex-wrap: wrap; gap: 0.9rem 1.2rem; }
+  .material-exp-progress { order: 4; flex: 0 0 100%; }
+  .material-exp-dot { flex: 1; width: auto; }
+  .material-exp-cue { min-width: 44px; padding: 0; justify-content: center; }
+  .material-exp-cue-label { display: none; }
+}

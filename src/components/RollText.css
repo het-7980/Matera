@@ -1,0 +1,29 @@
+.roll {
+  display: inline-flex;
+}
+
+.roll-char {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.roll-char > span {
+  display: block;
+  transition: transform 0.6s var(--ease-premium);
+  transition-delay: calc(var(--i) * 16ms);
+}
+
+.roll-char > span:last-child {
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+:is(a, button):is(:hover, :focus-visible) .roll-char > span {
+  transform: translateY(-100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roll-char > span { transition: none; }
+}

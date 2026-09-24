@@ -1,0 +1,43 @@
+.about-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4rem, 9vw, 7rem);
+  padding-block: clamp(2rem, 6vw, 4rem) clamp(6rem, 10vw, 8rem);
+}
+
+.about-block {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.about-block-reverse {
+  direction: rtl;
+}
+.about-block-reverse > * { direction: ltr; }
+
+.about-block-index {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.about-block-text h3 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 300;
+}
+
+.about-block-text p {
+  margin-top: 1.1rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  max-width: 52ch;
+}
+
+@media (max-width: 800px) {
+  .about-block, .about-block-reverse { grid-template-columns: 1fr; direction: ltr; }
+}

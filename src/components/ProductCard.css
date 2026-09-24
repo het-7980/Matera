@@ -1,0 +1,43 @@
+.product-card { display: block; }
+
+.product-card-media { overflow: hidden; }
+.product-card :where(.media) { transition: transform 1.1s var(--ease-premium); }
+.product-card:hover :where(.media) { transform: scale(1.06); }
+
+.product-card h4 {
+  background: linear-gradient(currentColor, currentColor) left bottom / 0% 1px no-repeat;
+  transition: background-size 0.7s var(--ease-premium);
+}
+.product-card:hover h4 { background-size: 100% 1px; }
+
+.product-card-info {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.product-card-info-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.product-card-info-top h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.05rem;
+}
+
+.product-card-collection {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.product-card-meta {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}

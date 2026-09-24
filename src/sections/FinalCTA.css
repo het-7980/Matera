@@ -1,0 +1,34 @@
+.final-cta {
+  background: var(--color-charcoal);
+  color: var(--color-ivory);
+  padding-block: clamp(6rem, 16vw, 11rem);
+}
+
+.final-cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2.6rem;
+}
+
+.final-cta-title {
+  font-size: clamp(2.6rem, 8vw, 6rem);
+  font-weight: 300;
+  line-height: 1.02;
+}
+
+.final-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.final-cta-text-link {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}

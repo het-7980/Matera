@@ -1,0 +1,169 @@
+.craft-h {
+  position: relative;
+  background: var(--color-ivory);
+}
+
+.craft-h.is-pinned .craft-h-sticky {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.craft-h:not(.is-pinned) {
+  padding-block: clamp(5rem, 10vw, 8rem);
+}
+
+.craft-h-sticky > .container { width: 100%; }
+
+.craft-h-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.craft-h-header .section-heading { margin-bottom: 0; }
+
+.craft-h-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.8rem;
+  padding-bottom: 0.4rem;
+}
+
+.craft-h-counter {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.craft-h-counter strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.craft-h-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.craft-h-track {
+  display: flex;
+  gap: clamp(1.2rem, 2vw, 2rem);
+  width: max-content;
+  padding-inline: var(--gutter);
+  margin-top: clamp(1.8rem, 4vh, 3rem);
+}
+
+.craft-h-intro {
+  flex-shrink: 0;
+  width: clamp(240px, 22vw, 340px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 1.5rem;
+}
+
+.craft-h-intro p {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 2vw, 1.75rem);
+  font-weight: 300;
+  line-height: 1.35;
+}
+
+.craft-h-hint {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.craft-h-card {
+  flex-shrink: 0;
+  width: calc(min(50svh, 520px) * 0.8);
+}
+
+.craft-h-card-media { position: relative; }
+
+.craft-h-card .media-img {
+  left: -6%;
+  width: 112%;
+  max-width: none;
+}
+
+.craft-h-card-index {
+  position: absolute;
+  top: 0.9rem;
+  left: 1rem;
+  z-index: 2;
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.6vw, 3.4rem);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--color-ivory);
+  text-shadow: 0 2px 18px rgba(20, 18, 15, 0.35);
+}
+
+.craft-h-card-name {
+  margin-top: 1rem;
+  font-size: 1.35rem;
+  font-weight: 400;
+}
+
+.craft-h-card-desc {
+  margin-top: 0.5rem;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  max-width: 34ch;
+}
+
+.craft-h-progress {
+  position: relative;
+  height: 1px;
+  margin-top: clamp(1.5rem, 3.5vh, 2.5rem);
+  background: var(--color-line);
+}
+
+.craft-h-progress-fill {
+  position: absolute;
+  inset: 0;
+  display: block;
+  background: var(--color-charcoal);
+  transform-origin: left center;
+}
+
+/* Swipeable fallback */
+.craft-h:not(.is-pinned) .craft-h-track {
+  width: auto;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--gutter);
+  padding-bottom: 0.5rem;
+  scrollbar-width: none;
+}
+
+.craft-h:not(.is-pinned) .craft-h-track::-webkit-scrollbar { display: none; }
+
+.craft-h:not(.is-pinned) .craft-h-card,
+.craft-h:not(.is-pinned) .craft-h-intro {
+  width: 72vw;
+  max-width: 360px;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 900px) {
+  .craft-h-header { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
+  .craft-h-meta { align-items: flex-start; }
+}

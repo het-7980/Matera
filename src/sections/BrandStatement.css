@@ -1,0 +1,29 @@
+.statement {
+  background: var(--color-ivory);
+  padding-block: clamp(6rem, 16vw, 12rem);
+}
+
+.statement-inner {
+  max-width: 1180px;
+}
+
+.statement-text {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(1.9rem, 5.2vw, 4.2rem);
+  line-height: 1.25;
+  color: var(--color-charcoal);
+}
+
+.statement-word-wrap {
+  display: inline-block;
+}
+
+.statement-word {
+  display: inline-block;
+}
+
+.statement-line-2 {
+  font-style: italic;
+  color: var(--color-accent);
+}

@@ -1,0 +1,18 @@
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: var(--color-charcoal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.curtain-mark {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--color-ivory);
+}

@@ -1,0 +1,103 @@
+.collections-section {
+  background: var(--color-warm-white);
+  padding-top: clamp(5rem, 10vw, 8rem);
+}
+
+.collections-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.collections-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-bottom: clamp(2.5rem, 6vw, 5rem);
+  white-space: nowrap;
+}
+
+.collection-row {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-top: 1px solid var(--color-line);
+}
+
+.collection-row:last-child { border-bottom: 1px solid var(--color-line); }
+
+.collection-row-media {
+  position: relative;
+  height: clamp(280px, 42vw, 560px);
+  transition: transform 1.1s var(--ease-premium);
+}
+
+.collection-row:hover .collection-row-media { transform: scale(1.035); }
+.collection-row-media :where(.media) { height: 100%; }
+
+.collection-row-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  padding-bottom: clamp(1.6rem, 4vw, 3rem);
+  color: var(--color-ivory);
+}
+
+.collection-row::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(20,18,15,0.6) 0%, rgba(20,18,15,0) 50%);
+  z-index: 1;
+  pointer-events: none;
+  transition: background-color 0.9s var(--ease-premium);
+}
+
+.collection-row:hover::after { background-color: rgba(20, 18, 15, 0.18); }
+
+.collection-row-index {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+}
+
+.collection-row-text { flex: 1; }
+
+.collection-row-name {
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 300;
+  transition: transform 0.9s var(--ease-premium);
+}
+
+.collection-row:hover .collection-row-name { transform: translateX(14px); }
+
+.collection-row-cta svg { transition: transform 0.6s var(--ease-premium); }
+.collection-row:hover .collection-row-cta svg { transform: rotate(45deg); }
+
+.collection-row-desc {
+  margin-top: 0.5rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+  color: rgba(244, 241, 234, 0.8);
+  max-width: 38ch;
+}
+
+.collection-row-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .collections-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .collection-row-content { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+}

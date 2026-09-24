@@ -1,0 +1,21 @@
+.split-line {
+  display: block;
+}
+
+.split-word {
+  display: inline;
+  white-space: nowrap;
+}
+
+.split-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+
+.split-piece {
+  display: inline-block;
+  transform-origin: left bottom;
+}

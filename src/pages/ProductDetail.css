@@ -1,0 +1,123 @@
+.product-detail {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  padding-top: clamp(7.5rem, 14vw, 10rem);
+  padding-bottom: clamp(5rem, 10vw, 7rem);
+}
+
+.product-detail-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.product-detail-gallery-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.product-detail-loupe {
+  position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.product-detail-loupe .media-img {
+  transform-origin: var(--zx, 50%) var(--zy, 50%);
+  transition: opacity 0.9s var(--ease-premium), transform 0.7s var(--ease-premium);
+}
+
+.product-detail-loupe.is-zooming .media-img { transform: scale(2.2); }
+
+.product-detail-loupe-hint {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ivory);
+  background: rgba(20, 18, 15, 0.55);
+  backdrop-filter: blur(6px);
+  transition: opacity 0.4s var(--ease-premium);
+  pointer-events: none;
+}
+
+.product-detail-loupe.is-zooming .product-detail-loupe-hint { opacity: 0; }
+
+@media (hover: none) {
+  .product-detail-loupe { cursor: auto; }
+  .product-detail-loupe-hint { display: none; }
+}
+
+.product-detail-info {
+  position: sticky;
+  top: calc(var(--nav-height) + 2rem);
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.product-detail-info h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 300;
+  margin-top: 0.2rem;
+}
+
+.product-detail-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.product-detail-specs dt {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.product-detail-specs dd {
+  margin-top: 0.35rem;
+  font-size: 1rem;
+}
+
+.product-detail-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.8rem;
+}
+
+.product-detail-note {
+  margin-top: 1.6rem;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  max-width: 42ch;
+}
+
+.product-detail-related {
+  padding-bottom: clamp(5rem, 10vw, 8rem);
+}
+.product-detail-related > .eyebrow { display: block; margin-bottom: 1.6rem; }
+.product-detail-related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.3rem;
+}
+
+@media (max-width: 900px) {
+  .product-detail { grid-template-columns: 1fr; }
+  .product-detail-info { position: static; }
+  .product-detail-related-grid { grid-template-columns: repeat(2, 1fr); }
+}

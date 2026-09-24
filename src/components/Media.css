@@ -1,0 +1,33 @@
+.media {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  isolation: isolate;
+}
+
+.media-frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.media-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.9s var(--ease-premium);
+}
+
+.media-img.is-loaded { opacity: 1; }
+
+/* Tone gradients — the loading-state background behind each photo */
+.media-stone { background: linear-gradient(155deg, #ada497 0%, #8f8678 42%, #74695a 78%, #5f564a 100%); }
+.media-sand { background: linear-gradient(150deg, #e4d9c4 0%, #d3c3a4 45%, #bfa87f 80%, #a88f66 100%); }
+.media-concrete { background: linear-gradient(160deg, #9b9791 0%, #86817a 40%, #6c6862 75%, #57534d 100%); }
+.media-charcoal { background: linear-gradient(160deg, #3a352d 0%, #262319 55%, #16140f 100%); }
+.media-marble { background: linear-gradient(140deg, #f2efe8 0%, #e7e2d7 50%, #dcd5c6 100%); }
+.media-clay { background: linear-gradient(150deg, #b98763 0%, #a06e4c 45%, #7d5439 85%, #634230 100%); }
+.media-ivory { background: linear-gradient(160deg, #f7f4ee 0%, #eee8dc 100%); }

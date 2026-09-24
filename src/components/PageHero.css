@@ -1,0 +1,33 @@
+.page-hero {
+  padding-block: clamp(8.5rem, 16vw, 12rem) clamp(3rem, 6vw, 5rem);
+  background: var(--color-warm-white);
+}
+
+.page-hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 900px;
+}
+
+.page-hero-title {
+  font-size: clamp(2.6rem, 6.5vw, 5rem);
+  font-weight: 300;
+}
+
+.page-hero-rule {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: 1px;
+  margin-top: 1rem;
+  background: var(--color-line-strong);
+  transform-origin: left center;
+}
+
+.page-hero-desc {
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  color: var(--color-text-muted);
+  max-width: 56ch;
+  line-height: 1.7;
+}
